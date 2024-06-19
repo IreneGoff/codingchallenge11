@@ -35,3 +35,11 @@ bar.append('rect')
   .transition()
   .duration(1000)
   .attr('width', d => xScale(d));
+
+// Append text label for each bar
+bar.append('text')
+.attr('x', d => xScale(d) - 5)  // Position text at the end of the bar
+.attr('y', barHeight / 2)
+.attr('dy', '.35em')
+.text(d => d)
+.attr('fill', 'white');
