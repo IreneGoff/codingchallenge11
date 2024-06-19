@@ -14,3 +14,8 @@ const svg = d3.select('body')
   .append('svg')
   .attr('width', width)
   .attr('height', height);
+
+// Scale for x-axis
+const xScale = d3.scaleLinear()
+.domain([0, d3.max(dataset)])
+.range([50, width]);
