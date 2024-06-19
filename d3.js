@@ -43,3 +43,16 @@ bar.append('text')
 .attr('dy', '.35em')
 .text(d => d)
 .attr('fill', 'white');
+
+// Hover effect to highlight bars
+bar.selectAll('rect')
+  .on('mouseover', function() {
+    d3.select(this).attr('fill', 'orange');
+  })
+  .on('mouseout', function() {
+    d3.select(this).attr('fill', 'steelblue');
+  });
+
+// Set the initial color for bars
+bar.selectAll('rect')
+  .attr('fill', 'steelblue');
